@@ -1,0 +1,50 @@
+.base {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: calc(100% - var(--page-padding-block));
+  scroll: auto;
+  background-color: var(--bg-strongest);
+  will-change: transform;
+  border-top-left-radius: var(--rounded);
+  border-top-right-radius: var(--rounded);
+}
+
+.base::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin-top: -1px;
+  height: 100vh;
+  background-color: var(--bg-strongest);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.drag-affordance {
+  margin-inline: auto;
+  width: 48px;
+  height: 6px;
+  margin-block-start: 12px;
+  border-radius: 999rem;
+  background: var(--text-lightest);
+}
+
+.dialog {
+  outline: none;
+}
+
+.content {
+  padding: var(--page-padding-inline);
+}
+
+.interactive {
+  pointer-events: initial;
+}

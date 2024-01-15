@@ -1,0 +1,23 @@
+.base {
+  font-size: 1.35rem;
+  line-height: 1.65em;
+  color: var(--text-light);
+}
+
+.base:not(:last-child) {
+  margin-block-end: 2rem;
+}
+
+.callout {
+  font-size: 1.75rem;
+  color: var(--text);
+}
+
+@media screen and (max-width: 640px) {
+  .base {
+    font-size: 1rem;
+  }
+  .callout {
+    font-size: 1.5rem;
+  }
+}

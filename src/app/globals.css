@@ -1,0 +1,97 @@
+:root {
+  --rounded: 1.5rem;
+  --content-width: 960px;
+  --page-padding-inline: 3rem;
+  --page-padding-block: 5rem;
+
+  --white: #FFFFFF;
+  --neutral-100: #F9F7FF;
+  --neutral-200: #F3F1FB;
+  --neutral-300: #E0DDEF;
+  --neutral-400: #CFCCDB;
+  --neutral-500: #9490A5;
+  --neutral-600: #5D5968;
+  --neutral-700: #3C3949;
+  --neutral-800: #25222F;
+  --neutral-900: #131118;
+  --neutral-950: #080809; 
+  --black: #000000;
+
+  --magenta: #EB0094;
+  --cyan: #0DC6EE;
+
+  --bg: var(--neutral-200);
+  --bg-strong: var(--neutral-100);
+  --bg-strongest: var(--white);
+  --bg-translucent: rgba(255,255,255,0.75);
+  --text: var(--neutral-950);
+  --text-light: var(--neutral-600);
+  --text-lightest: var(--neutral-500);
+  --text-backdrop: var(--white);
+  --stroke: var(--neutral-400);
+  --stroke-light: var(--neutral-300);
+  --stroke-strong: var(--neutral-500);
+  --button-hover: var(--neutral-300);
+  --cursor: var(--neutral-600);
+  --invert: var(--black);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--black);
+    --bg-strong: var(--neutral-950);
+    --bg-strongest: var(--neutral-900);
+    --bg-translucent: rgba(19,17,24,0.75);
+    --text: var(--neutral-100);
+    --text-light: var(--neutral-500);
+    --text-lightest: var(--neutral-600);
+    --text-backdrop: var(--neutral-800);
+    --stroke: var(--neutral-700);
+    --stroke-light: var(--neutral-800);
+    --stroke-strong: var(--neutral-600);
+    --button-hover: var(--neutral-800);
+    --cursor: var(--neutral-500);
+    --invert: var(--white);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg-strong);
+  color: var(--text);
+  cursor: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+
+button, input, textarea, label {
+  cursor: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --page-padding-inline: 1.5rem;
+    --page-padding-block: 4rem;
+  }
+}

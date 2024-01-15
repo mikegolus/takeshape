@@ -1,0 +1,59 @@
+@media (hover: none) {
+  .primary, .ghost, .secondary {
+    display: none;
+  }
+}
+
+
+@media (hover: hover) {
+
+  .primary {
+    position: fixed;
+    background: var(--cursor);
+    z-index: 999;
+    left: -5px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.65;
+  }
+
+  .ghost {
+    position: fixed;
+    background: var(--invert);
+    z-index: 998;
+    left: -5px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+  }
+
+  .secondary {
+    position: fixed;
+    z-index: 999;
+    left: -14px;
+    top: -14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--invert);
+    opacity: 0.15;
+    transition-property: left, top, width, height, opacity;
+    transition-duration: 300ms;
+    pointer-events: none;
+  }
+
+  .secondary.hover {
+    left: -26px;
+    top: -26px;
+    width: 52px;
+    height: 52px;
+    opacity: 0.2;
+  }
+
+}

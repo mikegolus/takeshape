@@ -1,0 +1,77 @@
+.base {
+  position: relative;
+  display: inline-block;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text);
+  padding: 1em 2em;
+  border: 1px solid var(--stroke-strong);
+  border-radius: 999rem;
+  transition: 150ms;
+}
+
+.base:not(.primary):hover {
+  background: var(--button-hover);
+}
+
+.primary {
+  background-color: var(--magenta);
+  border-color: var(--magenta);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.primary:hover {
+  filter: brightness(0.9);
+}
+
+.label {
+  transition: 200ms;
+  opacity: 1;
+}
+
+.processing .label {
+  opacity: 0;
+}
+
+.processing-indicator-container {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: 200ms;
+}
+
+.processing .processing-indicator-container {
+  opacity: 1;
+}
+
+.processing-indicator {
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: spin 1s linear infinite;
+  stroke: currentColor;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

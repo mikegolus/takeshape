@@ -1,0 +1,76 @@
+.base {
+  mix-blend-mode: multiply;
+  --fill: #000;
+}
+
+.fill {
+  fill: var(--fill);
+}
+
+.knockout {
+  fill: #FFF;
+}
+
+@media (prefers-color-scheme: dark) {
+  .base {
+    mix-blend-mode: screen;
+    --fill: #FFF;
+  }
+  
+  .knockout {
+    fill: #000;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate .word,
+  .animate .left,
+  .animate .right,
+  .animate.color .right .fill {
+    animation: 2.5s 0.5s both;
+  }
+
+  .animate .word {
+    animation-name: word;
+  }
+
+  .animate .left {
+    animation-name: left;
+  }
+
+  .animate .right {
+    transform-origin: center;
+    animation-name: right;
+  }
+
+  .animate.color .right .fill {
+    animation-name: right-fill
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .color .right .fill {
+    fill: var(--magenta);
+  }
+}
+
+@keyframes word {
+  0%, 40% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes left {
+  0%, 40% { transform: translateX(50px) }
+  100% { transform: translateX(0px) }
+}
+
+@keyframes right {
+  0% { transform: scale(1.2) translateX(-137px) }
+  40% { transform: scale(1) translateX(-137px) }
+  100% { transform: scale(1) translateX(0px) }
+}
+
+@keyframes right-fill {
+  0%, 40% { fill: var(--fill) }
+  100% { fill: var(--magenta) }
+}

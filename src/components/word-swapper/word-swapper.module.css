@@ -1,0 +1,10 @@
+.base {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.word-container {
+  width: fit-content;
+}

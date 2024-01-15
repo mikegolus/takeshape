@@ -1,0 +1,87 @@
+.base {
+  container-name: project;
+  container-type: inline-size;
+}
+
+.image {
+  display: block;
+  position: relative;
+  background: var(--bg-strongest);
+  border-radius: var(--rounded);
+  overflow: clip;
+  aspect-ratio: 8/5;
+  margin-block-end: 1rem;
+}
+
+.image img {
+  object-fit: cover;
+}
+
+@media (hover: hover) {
+  .image.has-link {
+    filter: brightness(0.86);
+    transition: filter 200ms
+  }
+
+  .image.has-link:hover {
+    transition-duration: 400ms;
+    filter: brightness(1);
+  }
+}
+
+
+
+.body {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.label {
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-block-end: 0.25rem;
+}
+
+.sublabel {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin-block-end: 0.5rem;
+}
+
+.skills {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  justify-content: flex-end;
+}
+
+.link * {
+  pointer-events: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+@media (prefers-color-scheme: light) {
+  .project {
+    box-shadow: 0 8px 36px rgba(0,0,0,0.05);
+  }
+}
+
+@container project (max-width: 400px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .skills {
+    justify-content: flex-start;
+    margin-inline-start: -0.25rem;
+  }
+}

@@ -1,0 +1,134 @@
+.header {
+	position: fixed;
+	z-index: 3;
+	left: var(--page-padding-inline);
+	top: 2rem;
+	pointer-events: none;
+}
+
+.header nav {
+	position: relative;
+	display: grid;
+	pointer-events: none;
+	isolation: isolate;
+}
+
+.header nav::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	background: var(--bg-translucent);
+	backdrop-filter: blur(8px);
+	opacity: 0;
+	transition: 400ms;
+}
+
+.header nav.active::before {
+	opacity: 1;
+}
+
+.menu-toggle {
+	position: relative;
+	width: 42px;
+	height: 42px;
+	background: transparent;
+	margin-right: 10px;
+	pointer-events: all;
+	border: none;
+}
+
+.menu-toggle .lines {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+  width: 24px;
+	height: 3px;
+	background-color: var(--text);
+  transition: all 200ms ease-in-out;
+	pointer-events: none;
+}
+
+.menu-toggle .lines::before,
+.menu-toggle .lines::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 100%;
+	background: var(--text);
+	margin: 8px 0;
+	transition: all 200ms ease-in-out;
+}
+
+.menu-toggle .lines::before {
+	bottom: 0;
+}
+
+.menu-toggle .lines::after {
+	top: 0;
+}
+
+nav.active .menu-toggle .lines {
+	background-color: transparent;
+	width: 16px;
+}
+
+nav.active .menu-toggle .lines::before,
+nav.active .menu-toggle .lines::after {
+	margin: 0;
+}
+
+.header ul {
+	display: grid;
+	margin: 0;
+	padding: 0 0 2rem;
+	list-style: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: 400ms;
+	pointer-events: all;
+}
+
+.header nav.active ul {
+	visibility: visible;
+	opacity: 1;
+}
+
+.header li {
+	display: block;
+}
+
+.header a {
+	display: block;
+	padding-inline: 3rem;
+	padding-block: 0.35em;
+	color: var(--text);
+	font-size: 1.5rem;
+	font-weight: 700;
+	text-decoration: none;
+	transition: 200ms color;
+}
+
+.header a.current {
+	color: var(--magenta);
+}
+
+@media (hover: hover) {
+	.header .menu-toggle:hover .lines::before {
+		left: 6px;
+	}
+
+	.header .menu-toggle:hover .lines::after {
+		right: 6px;
+	}
+	
+	.header nav.active .menu-toggle:hover .lines {
+		width: 20px;
+	}
+
+	.header a:hover {
+		color: var(--magenta);
+	}
+}
