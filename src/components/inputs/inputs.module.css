@@ -22,6 +22,8 @@
   outline: none;
   transition: 120ms;
   pointer-events: initial;
+  border-radius: 0;
+  color: inherit;
 }
 
 .field:focus-visible {
@@ -73,4 +75,13 @@
 
 .base select {
   appearance: none;
+}
+
+@media screen and (max-width: 640px) {
+  .field-wrapper {
+    font-size: 1rem;
+  }
+  .main {
+    font-size: 1rem;
+  }
 }

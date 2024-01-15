@@ -48,3 +48,9 @@
   line-height: 1.75em;
   color: var(--text-light)
 }
+
+@media screen and (max-width: 640px) {
+  .logo {
+    max-width: 280px;
+  }
+}

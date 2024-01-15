@@ -6,3 +6,9 @@
   padding-block: var(--page-padding-block);
   border-radius: var(--rounded);
 }
+
+@media screen and (max-width: 640px) {
+  .form {
+    margin-inline: calc(var(--page-padding-inline) * -1);
+  }
+}
