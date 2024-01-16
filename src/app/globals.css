@@ -23,7 +23,7 @@
   --bg: var(--neutral-200);
   --bg-strong: var(--neutral-100);
   --bg-strongest: var(--white);
-  --bg-translucent: rgba(255,255,255,0.75);
+  --bg-translucent: rgba(255,255,255,0.85);
   --text: var(--neutral-950);
   --text-light: var(--neutral-600);
   --text-lightest: var(--neutral-500);
@@ -41,7 +41,7 @@
     --bg: var(--black);
     --bg-strong: var(--neutral-950);
     --bg-strongest: var(--neutral-900);
-    --bg-translucent: rgba(19,17,24,0.75);
+    --bg-translucent: rgba(19,17,24,0.9);
     --text: var(--neutral-100);
     --text-light: var(--neutral-500);
     --text-lightest: var(--neutral-600);

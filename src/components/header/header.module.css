@@ -17,11 +17,12 @@
 	content: "";
 	position: absolute;
 	z-index: -1;
-	inset: 0;
+	inset: -2rem calc(var(--page-padding-inline) * -1);
 	background: var(--bg-translucent);
 	backdrop-filter: blur(8px);
 	opacity: 0;
 	transition: 400ms;
+	border-bottom-right-radius: var(--rounded);
 }
 
 .header nav.active::before {
@@ -83,7 +84,7 @@ nav.active .menu-toggle .lines::after {
 .header ul {
 	display: grid;
 	margin: 0;
-	padding: 0 0 2rem;
+	padding: 0 1rem 1rem 0;
 	list-style: none;
 	visibility: hidden;
 	opacity: 0;
@@ -102,7 +103,7 @@ nav.active .menu-toggle .lines::after {
 
 .header a {
 	display: block;
-	padding-inline: 3rem;
+	padding-inline: 12px;
 	padding-block: 0.35em;
 	color: var(--text);
 	font-size: 1.5rem;
