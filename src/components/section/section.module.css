@@ -50,6 +50,10 @@
 }
 
 @media screen and (max-width: 640px) {
+  .grid {
+    background-size: 18px 18px;
+  }
+
   .section:first-of-type {
     padding-top: 10rem;
   }
