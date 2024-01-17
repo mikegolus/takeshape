@@ -28,10 +28,9 @@ export const LetsTalk = () => (
         name="budget"
         label="What's your estimated project budget?"
         required
+        defaultValue="under $10K"
       >
-        <option value="under $10K" selected>
-          under $10K
-        </option>
+        <option value="under $10K">under $10K</option>
         <option value="$10-$25K">$10&ndash;$25K</option>
         <option value="$25-$50K">$25&ndash;$50K</option>
         <option value="over $25K">over $50K</option>

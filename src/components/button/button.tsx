@@ -43,7 +43,7 @@ export const Button: FC<ButtonProps> = ({
           strokeDasharray="24"
           strokeDashoffset="24"
         />
-        <circle opacity="0.4" cx="12" cy="12" r="10" stroke-width="4" />
+        <circle opacity="0.4" cx="12" cy="12" r="10" strokeWidth="4" />
       </svg>
       <span className={styles['sr-only']}>Processing...</span>
     </div>

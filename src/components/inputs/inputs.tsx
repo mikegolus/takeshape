@@ -3,6 +3,7 @@ import styles from './inputs.module.css'
 import { Icon } from '../icon/icon'
 
 interface InputProps {
+  defaultValue?: string
   description?: string
   label?: string
   name: string
@@ -20,6 +21,7 @@ interface WrapperProps extends PropsWithChildren {
 }
 
 export const Input: FC<InputProps> = ({
+  defaultValue,
   description,
   label,
   name,
@@ -32,11 +34,13 @@ export const Input: FC<InputProps> = ({
       className={styles.field}
       placeholder={prompt}
       required={required}
+      defaultValue={defaultValue}
     />
   </Wrapper>
 )
 
 export const TextArea: FC<InputProps> = ({
+  defaultValue,
   description,
   label,
   name,
@@ -50,12 +54,14 @@ export const TextArea: FC<InputProps> = ({
       rows={4}
       placeholder={prompt}
       required={required}
+      defaultValue={defaultValue}
     />
   </Wrapper>
 )
 
 export const Select: FC<SelectProps> = ({
   children,
+  defaultValue,
   description,
   label,
   name,
@@ -63,7 +69,12 @@ export const Select: FC<SelectProps> = ({
   required,
 }) => (
   <Wrapper label={label} description={description} iconEnd="nav-arrow-down">
-    <select name={name} className={styles.field} required={required}>
+    <select
+      name={name}
+      className={styles.field}
+      required={required}
+      defaultValue={defaultValue}
+    >
       {prompt && <option value="">{prompt}</option>}
       {children}
     </select>
